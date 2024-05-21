@@ -1,0 +1,21 @@
+.dayBackground {
+  background: linear-gradient(40deg, #0093e9 0%, #80d0c7 100%);
+}
+
+.nightBackgound {
+  background: linear-gradient(30deg, #040308 50%, #3e5879 100%);
+}
+
+.sunrise {
+  background: linear-gradient(
+    to top,
+    #040308,
+    #ad4a28,
+    #dd723c,
+    #fc7001,
+    #dcb697,
+    #9ba5ae,
+    #3e5879,
+    #020b1a
+  );
+}
