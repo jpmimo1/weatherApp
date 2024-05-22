@@ -1,9 +1,7 @@
 'use client'
-import React, { useMemo } from 'react'
-import { Card, CardContent } from './ui/card'
-import { useWeatherStore } from '@/store/weatherApp'
-import { placeToTexts } from '../lib/placeToTexts';
-import { FaLocationDot } from 'react-icons/fa6';
+import React, { useMemo } from 'react';
+import Image from 'next/image';
+import { useWeatherStore } from '@/store/weatherApp';
 import clearSkyD from '@/assets/weatherIcons/clear-sky-d.svg';
 import clearSkyN from '@/assets/weatherIcons/clear-sky-n.svg';
 import fewCloudsD from '@/assets/weatherIcons/few-clouds-d.svg';
@@ -18,7 +16,11 @@ import thunderstorm from '@/assets/weatherIcons/thunderstorm.svg';
 import snowD from '@/assets/weatherIcons/snow-d.svg';
 import snowN from '@/assets/weatherIcons/snow-n.svg';
 import mist from '@/assets/weatherIcons/mist.svg';
-import Image from 'next/image';
+import { FaLocationDot } from 'react-icons/fa6';
+import { placeToTexts } from '@/lib/placeToTexts';
+import { Card } from '../ui/card';
+import { ScrollArea, ScrollBar } from '../ui/scroll-area';
+import { HourlyCard } from './components';
 
 const codeIconToImage = {
   '01d': clearSkyD,
@@ -78,11 +80,11 @@ export const WeatherDesk = () => {
             <div className='text-nowrap'>{`Feels like ${feelsLikeShow} ° C`}</div>
           </div>
           <div className='flex items-center relative w-[180px] '>
-            <Image className='sm:absolute right-0 min-w-[150px] z-10' src={iconShow} alt={description} width={180} />
+            <Image className='sm:absolute right-0 min-w-[150px] w-[130px] z-10' src={iconShow} alt={description} width={180} />
           </div>
         </div>
       </div>
-
+      <HourlyCard />
     </div>
   )
 }
