@@ -12,6 +12,9 @@ const fontSans = Inter({ subsets: ["latin"], variable: "--font-sans" });
 export const metadata: Metadata = {
   title: "Weather App",
   description: "Weather app created by Jean Paul Flores",
+  icons:{
+    icon:'/favicon.ico'
+  }
 };
 
 export default function RootLayout({
