@@ -1,3 +1,5 @@
+'use client'
+
 import { Card } from '@/components/ui/card'
 import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area'
 import { useWeatherStore } from '@/store/weatherApp'
@@ -5,6 +7,7 @@ import React, { useMemo } from 'react'
 import { HourlyItem } from './HourlyItem'
 import moment, { Moment } from 'moment'
 import { Current } from '@/types'
+import { Skeleton } from '@/components/ui/skeleton'
 
 
 export type Suntype = {
@@ -67,6 +70,10 @@ export const HourlyCard = () => {
     }, []);
   }, [sunrise, sunset]);
 
+  if (!weather) {
+    return <SkeletonCard />
+  }
+
   return (
     <Card className='p-4 bg-background/25'>
       <ScrollArea>
@@ -81,4 +88,8 @@ export const HourlyCard = () => {
       </ScrollArea>
     </Card>
   )
+}
+
+const SkeletonCard = () => {
+  return (<Skeleton className='h-[125.46px] w-full' />)
 }

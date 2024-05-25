@@ -1,0 +1,3 @@
+.scrollVertical > div > div {
+  display: block !important;
+}

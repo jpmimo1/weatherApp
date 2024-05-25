@@ -53,7 +53,6 @@ export const useWeatherStore = create<State & Action>()(devtools((set) => ({
   setWeatherLocationToShow: (wl) => set(() => ({ weatherLocationShow: wl })),
   setCurrentWL: (wl) => set(produce((state: State) => { state.currentWeatherLocation = wl })),
   setCurrentW: (w) => set(produce((state: State) => {
-    console.log(w);
     if (!w) {
       state.currentWeatherLocation.weather = undefined, state.currentWeatherLocation.readingTime = undefined
     } else {

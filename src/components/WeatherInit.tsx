@@ -1,6 +1,6 @@
 'use client'
 
-import { Geolocation, useGeolocation, useInitWeatherStore } from "@/hooks";
+import { useGeolocation, useInitWeatherStore } from "@/hooks";
 import { coordinatesLocationRequest, ipRequest, locationIpRequest, weatherRequest } from "@/requests";
 import { Location, WeatherLocation, useWeatherStore } from "@/store/weatherApp";
 import moment from "moment";
